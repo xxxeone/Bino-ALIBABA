@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bino EduTour · 阿里巴巴研学团 2026</title>
+<meta name="description" content="Bino EduTour 阿里巴巴研学团 — 数字经济与组织文化升级之旅，11–16 Sept 2026，杭州，RM 4,999">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="cur"></div><div id="ring"></div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="ppModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2 class="zh">隐私政策</h2><h2 class="en">Privacy Policy</h2>
+    <p class="zh">最后更新：2026年 · Bino EduTour Sdn Bhd</p><p class="en">Last updated: 2026 · Bino EduTour Sdn Bhd</p>
+    <h3 class="zh">我们收集的资料</h3><h3 class="en">Data We Collect</h3>
+    <p class="zh">当你填写报名表格时，我们收集：姓名、公司名称、职位、联络电话、电子邮箱及报名人数。</p>
+    <p class="en">When you register, we collect: full name, company, role, phone number, email address and number of attendees.</p>
+    <h3 class="zh">资料保护 (PDPA)</h3><h3 class="en">Data Protection (PDPA)</h3>
+    <p class="zh">我们遵守马来西亚《2010年个人资料保护法令》。你的资料不会被出售或转让给第三方。</p>
+    <p class="en">We comply with Malaysia's Personal Data Protection Act 2010. Your data will not be sold or transferred to third parties.</p>
+    <h3>Contact</h3>
+    <p>WhatsApp: +60 12-246 8170</p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb-bg" id="lb">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+    <div class="lb-counter" id="lb-ctr"></div>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="mast-left">
+    <img class="mast-logo" src="assets/img_01.jpg" alt="Bino EduTour">
+    <div class="mast-brand">Bino EduTour<span>百诺研学</span></div>
+  </div>
+  <div class="lang-wrap">
+    <div style="display:flex">
+      <button class="lbtn on" id="btnZH" onclick="setLang('zh')">中文</button>
+      <button class="lbtn" id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#form" class="mast-cta"><span class="zh">立即报名 →</span><span class="en">Register Now →</span></a>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ti zh">阿里巴巴研学团</span><span class="ti en">Alibaba Study Tour</span><span class="td"> · </span>
+    <span class="ti">11–16 Sept 2026</span><span class="td"> · </span>
+    <span class="ti zh">杭州，中国</span><span class="ti en">Hangzhou, China</span><span class="td"> · </span>
+    <span class="ti zh">RM 4,999 特惠价</span><span class="ti en">RM 4,999 Special Price</span><span class="td"> · </span>
+    <span class="ti zh">全程零购物零推销</span><span class="ti en">Zero Shopping. Zero Selling.</span><span class="td"> · </span>
+    <span class="ti zh">看见 · 对齐 · 做到</span><span class="ti en">Awareness · Alignment · Action</span><span class="td"> · </span>
+    <span class="ti zh">阿里巴巴研学团</span><span class="ti en">Alibaba Study Tour</span><span class="td"> · </span>
+    <span class="ti">11–16 Sept 2026</span><span class="td"> · </span>
+    <span class="ti zh">杭州，中国</span><span class="ti en">Hangzhou, China</span><span class="td"> · </span>
+    <span class="ti zh">RM 4,999 特惠价</span><span class="ti en">RM 4,999 Special Price</span><span class="td"> · </span>
+    <span class="ti zh">全程零购物零推销</span><span class="ti en">Zero Shopping. Zero Selling.</span><span class="td"> · </span>
+    <span class="ti zh">看见 · 对齐 · 做到</span><span class="ti en">Awareness · Alignment · Action</span><span class="td"> · </span>
+  </div>
+</div>
+
+<!-- PHOTO HERO -->
+<section class="photo-hero">
+  <img class="photo-hero-img" src="assets/img_02.jpg" alt="">
+  <div class="photo-hero-overlay">
+    <div class="pho-content">
+      <div class="pho-eye zh">企业定制商务考察 · 杭州</div>
+      <div class="pho-eye en">Corporate Immersion · Hangzhou</div>
+      <h1 class="pho-h1 zh">阿里<br><span class="oc">巴巴</span><br><span class="oe">研学</span></h1>
+      <h1 class="pho-h1 en" style="font-size:clamp(46px,8vw,76px)"><span class="oc">ALIBABA</span><br><span class="oe">STUDY</span><br>TOUR</h1>
+      <p class="pho-desc zh">带马来西亚企业家深入全球标杆，<br>打破认知差距，回来即可执行。</p>
+      <p class="pho-desc en">Take Malaysian business leaders inside world-class enterprises — break knowledge gaps, return ready to execute.</p>
+      <div class="pho-pills">
+        <span class="pill hot zh">RM 4,999 特惠价</span>
+        <span class="pill hot en">RM 4,999 Special Price</span>
+        <span class="pill">11–16 Sept 2026</span>
+        <span class="pill zh">杭州，中国</span>
+        <span class="pill en">Hangzhou, China</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIES + SIDEBAR -->
+<div class="cgrid">
+  <div class="cos srl">
+    <div class="sec-hd">
+      <div class="sec-num">01</div>
+      <div><span class="sec-eye zh">企业参访</span><span class="sec-eye en">Site Visits</span><div class="sec-h zh">深入四大标杆现场</div><div class="sec-h en">Inside 4 Benchmark Firms</div></div>
+    </div>
+    <div>
+      <div class="co-row"><span class="co-n">01</span><div><span class="co-name">阿里巴巴集团 Alibaba</span><span class="co-tag zh">数字经济生态 · 组织架构创新</span><span class="co-tag en">Digital Ecosystem · Org Innovation</span></div><div class="co-arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="co-row"><span class="co-n">02</span><div><span class="co-name">九阳股份 JOYOUNG</span><span class="co-tag zh">制造业品牌升级 · 用户运营</span><span class="co-tag en">Brand Upgrade · User Operations</span></div><div class="co-arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="co-row"><span class="co-n">03</span><div><span class="co-name">申昊科技 SHENHAO</span><span class="co-tag zh">科技制造 · 智能化转型</span><span class="co-tag en">Tech Manufacturing · Digital Transformation</span></div><div class="co-arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="co-row"><span class="co-n">04</span><div><span class="co-name">娃哈哈集团 Wahaha</span><span class="co-tag zh">百亿国民品牌 · 渠道管理</span><span class="co-tag en">National Brand · Distribution Mastery</span></div><div class="co-arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+    </div>
+  </div>
+  <div class="sidebar sr">
+    <div class="sb-block">
+      <span class="sb-lbl zh">行程详情</span><span class="sb-lbl en">Trip Details</span>
+      <div class="sb-row"><span class="sb-rl zh">出发</span><span class="sb-rl en">Depart</span><span class="sb-rv">11 Sept 2026</span></div>
+      <div class="sb-row"><span class="sb-rl zh">回程</span><span class="sb-rl en">Return</span><span class="sb-rv">16 Sept 2026</span></div>
+      <div class="sb-row"><span class="sb-rl zh">目的地</span><span class="sb-rl en">Destination</span><span class="sb-rv zh">杭州，中国</span><span class="sb-rv en">Hangzhou, China</span></div>
+      <div class="sb-row"><span class="sb-rl">Duration</span><span class="sb-rv">6D / 5N</span></div>
+      <div class="sb-row"><span class="sb-rl zh">集合城市</span><span class="sb-rl en">Fly from</span><span class="sb-rv zh">吉隆坡</span><span class="sb-rv en">Kuala Lumpur</span></div>
+      <div class="sb-row"><span class="sb-rl zh">特惠价格</span><span class="sb-rl en">Price</span><span class="sb-rv acc">RM 4,999</span></div>
+    </div>
+    <div class="sb-block">
+      <span class="sb-lbl zh">适合你，如果…</span><span class="sb-lbl en">For you if…</span>
+      <p class="sb-body zh">你是企业主或高管，希望带领团队突破增长瓶颈，重新校准战略方向。</p>
+      <p class="sb-body en">You're a business owner or senior exec who wants to break through growth plateaus and realign your team's direction.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHY BINO -->
+<div class="highlights sr">
+  <div class="hl-hd"><span class="hl-eye zh">为什么选择 Bino</span><span class="hl-eye en">Why Bino EduTour</span><div class="hl-h zh">这不是旅游，是认知升级</div><div class="hl-h en">Not a Trip. A Mindset Reset.</div></div>
+  <div class="hl-grid">
+    <div class="hl-card">
+      <span class="hl-num">01</span>
+      <div class="hl-rule"></div>
+      <div class="hl-title zh">全天阿里巴巴<br>深度课程</div>
+      <div class="hl-title en">Full-Day Alibaba<br>Curriculum</div>
+      <p class="hl-body zh">由阿里内训师主导，系统解析<strong>战略三板斧</strong>、组织文化与管理架构。不是参观，是深度学习。</p>
+      <p class="hl-body en">Led by Alibaba internal trainers — deep-dive into <strong>Strategic Three-Axes</strong>, culture systems and management architecture. Not sightseeing. Learning.</p>
+    </div>
+    <div class="hl-card">
+      <span class="hl-num">02</span>
+      <div class="hl-rule"></div>
+      <div class="hl-title zh">全程零购物<br>零推销</div>
+      <div class="hl-title en">Zero Shopping.<br>Zero Selling.</div>
+      <p class="hl-body zh">没有购物行程，没有产品推销。<strong>每一分钟都专注于学习与觉醒</strong>，你的时间值得被认真对待。</p>
+      <p class="hl-body en">No shopping stops. No product pitches. <strong>Every minute is dedicated to learning</strong> — your time deserves to be taken seriously.</p>
+    </div>
+    <div class="hl-card">
+      <span class="hl-num">03</span>
+      <div class="hl-rule"></div>
+      <div class="hl-title zh">五星全包<br>零隐藏费用</div>
+      <div class="hl-title en">5-Star All-Inclusive.<br>Zero Hidden Costs.</div>
+      <p class="hl-body zh">五星酒店、豪华旅巴、西湖游船、宋城千古情门票及所有餐食，<strong>全部包含在 RM 4,999 之内</strong>。</p>
+      <p class="hl-body en">5-star hotel, luxury coach, West Lake cruise, Songcheng Show &amp; all meals — <strong>everything within RM 4,999</strong>. What you see is what you pay.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ALIBABA DEEP DIVE -->
+<div class="ali-day sr">
+  <img class="ali-bg-img" src="assets/img_03.jpg" alt="">
+  <div class="ali-wrap">
+    <div class="ali-inner">
+      <div>
+        <div class="ali-tag zh">💥 全天走进阿里巴巴</div>
+        <div class="ali-tag en">💥 Full Day Inside Alibaba</div>
+        <div class="ali-h zh">一整天<br>深度进入<br>阿里巴巴</div>
+        <div class="ali-h en">A Full Day<br>Inside<br>Alibaba</div>
+        <p class="ali-intro zh">不是参观，是系统学习。从文化根基到管理实战，全程由阿里内训师主导。</p>
+        <p class="ali-intro en">Not a tour — a structured learning journey led by Alibaba internal trainers, from cultural foundations to management practice.</p>
+      </div>
+      <div>
+        <div class="ali-block">
+          <div class="ali-blbl zh">上午 · 文化与战略</div>
+          <div class="ali-blbl en">Morning · Culture &amp; Strategy</div>
+          <ul class="ali-list">
+            <li data-n="01"><span class="zh">阿里巴巴企业文化与<strong style="color:#fff">核心价值观</strong></span><span class="en">Corporate Culture &amp; <strong style="color:#fff">Core Values</strong></span></li>
+            <li data-n="02"><span class="zh">组织的<strong style="color:#fff">商业结构</strong>解析</span><span class="en"><strong style="color:#fff">Business Structure</strong> &amp; Org Architecture</span></li>
+            <li data-n="03"><span class="zh"><strong style="color:#fff">战略三板斧</strong> — 定战略、搭班子、做文化</span><span class="en"><strong style="color:#fff">Strategic Three-Axes</strong> — Strategy, Team, Culture</span></li>
+            <li data-n="04"><span class="zh"><strong style="color:#fff">天、人、地</strong> 文化体系全解析</span><span class="en"><strong style="color:#fff">Heaven, People &amp; Earth</strong> Culture System</span></li>
+            <li data-n="05"><span class="zh">价值观的<strong style="color:#fff">考核机制与文化落地</strong></span><span class="en">Values <strong style="color:#fff">Assessment &amp; Cultural Implementation</strong></span></li>
+          </ul>
+        </div>
+        <div class="ali-block">
+          <div class="ali-blbl zh">下午 · 管理与运营</div>
+          <div class="ali-blbl en">Afternoon · Management &amp; Operations</div>
+          <ul class="ali-list">
+            <li data-n="06"><span class="zh"><strong style="color:#fff">管理三板斧</strong> — 揪头发、照镜子、开会艺术</span><span class="en"><strong style="color:#fff">Management Three-Axes</strong> — Pull Hair, Mirror, Master Meetings</span></li>
+            <li data-n="07"><span class="zh"><strong style="color:#fff">管理架构与总纲</strong></span><span class="en"><strong style="color:#fff">Management Framework</strong> &amp; Master Principles</span></li>
+            <li data-n="08"><span class="zh">管理者的<strong style="color:#fff">修炼之路</strong></span><span class="en">The Manager's <strong style="color:#fff">Development Path</strong></span></li>
+            <li data-n="09"><span class="zh">互动答疑 — <strong style="color:#fff">18人 → 4万人</strong>背后的机制</span><span class="en">Q&amp;A — <strong style="color:#fff">18 → 40,000 employees</strong>: the system behind it</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3A -->
+<div class="three-a sr">
+  <div class="a-p"><div class="a-bg">1</div><span class="a-zh zh">看见</span><span class="a-zh en" style="font-size:38px">AWARE</span><span class="a-en zh">Awareness</span><span class="a-en en">看见</span><p class="a-desc zh">深入阿里巴巴等企业现场，打破马来西亚企业家长期存在的认知差距与信息盲区。</p><p class="a-desc en">Go inside Alibaba and world-class enterprises — shatter the knowledge gaps and blind spots that hold Malaysian businesses back.</p></div>
+  <div class="a-p"><div class="a-bg">2</div><span class="a-zh zh">对齐</span><span class="a-zh en" style="font-size:38px">ALIGN</span><span class="a-en zh">Alignment</span><span class="a-en en">对齐</span><p class="a-desc zh">带领核心团队在同一现场接受同等刺激，统一战略语言，凝聚方向感与执行共识。</p><p class="a-desc en">Bring your core team to experience the same breakthroughs — unify strategic language and build shared execution alignment.</p></div>
+  <div class="a-p"><div class="a-bg">3</div><span class="a-zh zh">做到</span><span class="a-zh en" style="font-size:38px">ACT</span><span class="a-en zh">Action</span><span class="a-en en">做到</span><p class="a-desc zh">每晚大家一起讨论和复盘，提炼可直接落地的行动计划。</p><p class="a-desc en">Every evening, the whole group discusses and debriefs together — extracting actionable plans ready to implement on return.</p></div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-sec sr">
+  <div class="gal-hd">
+    <span class="gal-eye zh">精彩回顾</span><span class="gal-eye en">Previous Tour</span>
+    <div class="gal-h zh">上一团的精彩回顾</div>
+    <div class="gal-h en">Highlights From Our Last Tour</div>
+  </div>
+  <div class="g-grid">
+<div class="gi gi-wide" data-pos="center" onclick="lb('SAM02920')">
+  <img src="assets/img_04.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-wide" data-pos="top" onclick="lb('SAM03779')">
+  <img src="assets/img_05.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00181')">
+  <img src="assets/img_21.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM01590')">
+  <img src="assets/img_06.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00134')">
+  <img src="assets/img_07.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00373')">
+  <img src="assets/img_08.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-wide" data-pos="center" onclick="lb('SAM00553')">
+  <img src="assets/img_03.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00802')">
+  <img src="assets/img_09.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM01517')">
+  <img src="assets/img_10.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00844')">
+  <img src="assets/img_11.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-wide" data-pos="top" onclick="lb('SAM01323')">
+  <img src="assets/img_12.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00735')">
+  <img src="assets/img_13.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-wide" data-pos="center" onclick="lb('SAM03392')">
+  <img src="assets/img_14.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="center" onclick="lb('SAM02594')">
+  <img src="assets/img_15.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM02467')">
+  <img src="assets/img_16.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="center" onclick="lb('SAM02469')">
+  <img src="assets/img_17.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00376')">
+  <img src="assets/img_18.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM00009')">
+  <img src="assets/img_19.jpg" alt="" loading="lazy">
+</div>
+<div class="gi gi-norm" data-pos="top" onclick="lb('SAM03320')">
+  <img src="assets/img_20.jpg" alt="" loading="lazy">
+</div>
+  </div>
+</div>
+
+<!-- INCLUSIONS -->
+<div class="inclusions sr">
+  <div class="inc-col">
+    <div class="inc-col-hd"><div class="inc-col-marker g"></div><div class="inc-col-h zh">包含项目</div><div class="inc-col-h en">Included</div></div>
+    <ul class="inc-list">
+      <li class="inc-row"><span class="inc-num">01</span><span class="inc-text zh"><strong>餐食</strong> — 5 早餐 · 4 午餐 · 3 晚餐</span><span class="inc-text en"><strong>Meals</strong> — 5 Breakfasts · 4 Lunches · 3 Dinners</span></li>
+      <li class="inc-row"><span class="inc-num">02</span><span class="inc-text zh"><strong>住宿</strong> — 全程 5 星酒店双人房</span><span class="inc-text en"><strong>Accommodation</strong> — 5-Star Hotel, Twin Room</span></li>
+      <li class="inc-row"><span class="inc-num">03</span><span class="inc-text zh"><strong>交通</strong> — 豪华旅巴全程接送</span><span class="inc-text en"><strong>Transport</strong> — Luxury Coach &amp; all transfers</span></li>
+      <li class="inc-row"><span class="inc-num">04</span><span class="inc-text zh"><strong>西湖游船</strong>门票</span><span class="inc-text en"><strong>West Lake Boat Cruise</strong> ticket</span></li>
+      <li class="inc-row"><span class="inc-num">05</span><span class="inc-text zh"><strong>宋城千古情</strong>门票</span><span class="inc-text en"><strong>Songcheng Performance Show</strong> ticket</span></li>
+      <li class="inc-row"><span class="inc-num">06</span><span class="inc-text zh"><strong>全天阿里巴巴</strong>文化课程与教练课</span><span class="inc-text en"><strong>Full-Day Alibaba</strong> coaching sessions</span></li>
+      <li class="inc-row"><span class="inc-num">07</span><span class="inc-text zh"><strong>企业实战</strong>研讨会议</span><span class="inc-text en"><strong>Business Strategy</strong> workshop &amp; debrief</span></li>
+    </ul>
+  </div>
+  <div class="inc-col">
+    <div class="inc-col-hd"><div class="inc-col-marker r"></div><div class="inc-col-h zh">不含项目</div><div class="inc-col-h en">Not Included</div></div>
+    <ul class="inc-list">
+      <li class="inc-row"><span class="inc-num">01</span><span class="inc-text zh"><strong>往返机票</strong></span><span class="inc-text en"><strong>Return flights</strong></span></li>
+      <li class="inc-row"><span class="inc-num">02</span><span class="inc-text zh"><strong>个人旅游保险</strong></span><span class="inc-text en"><strong>Personal travel insurance</strong></span></li>
+    </ul>
+    <div class="zero-callout">
+      <p class="zh">全程无购物行程、无产品推销。<br>每一分钟都专注于学习与觉醒。</p>
+      <p class="en">Zero shopping stops. Zero sales pitches.<br>Every minute dedicated to learning &amp; growth.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRICE HERO -->
+<div class="ph sr">
+  <img class="ph-bg-img" src="assets/img_14.jpg" alt="">
+  <div class="ph-inner">
+    <div>
+      <span class="ph-eye zh">特惠价</span><span class="ph-eye en">Special Price</span>
+      <div class="ph-big zh">RM <span>4,999</span><br><span style="font-size:.42em;color:rgba(255,255,255,.5)">每人 · 双人间</span></div>
+      <div class="ph-big en">RM <span>4,999</span><br><span style="font-size:.42em;color:rgba(255,255,255,.5)">per pax · twin room</span></div>
+      <p class="ph-sub zh">名额有限，额满即止。</p>
+      <p class="ph-sub en">Limited seats. First come, first served.</p>
+      <span class="ph-note zh">不含往返机票与个人旅游保险</span>
+      <span class="ph-note en">Excluding return flights &amp; personal travel insurance</span>
+    </div>
+    <a href="#form" class="ph-btn"><span class="zh">立即锁定席位</span><span class="en">Secure My Seat</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</div>
+
+<!-- TICKETS -->
+<div class="tix sr">
+  <div class="tix-hd">
+    <div class="tix-hl zh">选择<br><span>席位</span></div>
+    <div class="tix-hl en">Choose<br><span>Your Seat</span></div>
+    <div class="tix-sub zh">名额有限，先到先得。付款后即锁定。</div>
+    <div class="tix-sub en">Limited seats. Secured upon payment. First come, first served.</div>
+  </div>
+  <div class="t-row"><span class="t-idx">01</span><div><div class="t-name zh">个人报名</div><div class="t-name en">Individual</div><div class="t-incl zh">单人参与 · 含全程研学费用</div><div class="t-incl en">Solo pax · Full programme included</div></div><div class="t-note zh">最受欢迎</div><div class="t-note en">Most popular</div><div><div class="t-price">RM 4,999</div><div class="t-orig zh">双人间每人</div><div class="t-orig en">Per pax · twin room</div></div></div>
+  <div class="t-row"><span class="t-idx">02</span><div><div class="t-name zh">企业团报（3人+）</div><div class="t-name en">Group (3+ pax)</div><div class="t-incl zh">3人或以上 · 团体优惠</div><div class="t-incl en">3 or more pax · Group rate</div></div><div class="t-note zh">带团队一起来</div><div class="t-note en">Bring your team</div><div><div class="t-price zh" style="font-size:17px;line-height:2.2">联系报价</div><div class="t-price en" style="font-size:17px;line-height:2.2">Enquire</div><div class="t-orig zh">WhatsApp 我们</div><div class="t-orig en">Contact us</div></div></div>
+  <div class="t-row"><span class="t-idx">03</span><div><div class="t-name zh">全包定制（10人+）</div><div class="t-name en">Charter (10+ pax)</div><div class="t-incl zh">企业专属包团 · 课程可调</div><div class="t-incl en">Private charter · Customisable</div></div><div class="t-note zh">最高灵活度</div><div class="t-note en">Most flexible</div><div><div class="t-price zh" style="font-size:17px;line-height:2.2">联系报价</div><div class="t-price en" style="font-size:17px;line-height:2.2">Enquire</div><div class="t-orig zh">全包定制方案</div><div class="t-orig en">Full custom package</div></div></div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-sec sr">
+  <div class="video-ruler">
+    <span class="v-eye zh">研学花絮</span><span class="v-eye en">Tour Highlights</span>
+    <div class="v-line"></div>
+    <span style="font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.14em;color:var(--ink4)">Hangzhou · 2026</span>
+  </div>
+  <div class="video-frame">
+    <video autoplay muted loop playsinline controls preload="auto" poster="assets/img_01.png" style="width:100%;display:block;max-height:560px;object-fit:cover">
+      <source src="assets/video.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="fsec" id="form">
+  <div class="f-ruler">
+    <span class="f-eye zh">报名表格</span><span class="f-eye en">Registration</span>
+    <div class="f-line"></div>
+    <span class="f-num">Form 002 · Sept 2026</span>
+  </div>
+  <div class="form-hl zh">填写资料</div>
+  <div class="form-hl en">Register Now</div>
+  <div class="form-sl zh">填妥表格后将跳转至付款指示页面，完成 RM 1,000 订金转账即锁定席位</div>
+  <div class="form-sl en">After submitting, you'll be directed to payment instructions — transfer RM 1,000 deposit to secure your seat</div>
+  <form id="regForm" class="fb" onsubmit="doSubmit(event)" novalidate>
+    <div class="frow frow-2">
+      <div class="ff"><label class="fl zh">姓名 Full Name *</label><label class="fl en">Full Name *</label><input class="fi" id="f-name" type="text" placeholder="Your full name" required><span class="err-msg zh">请填写姓名</span><span class="err-msg en">Please enter your name</span></div>
+      <div class="ff"><label class="fl zh">公司名称 *</label><label class="fl en">Company *</label><input class="fi" id="f-company" type="text" placeholder="Your company" required><span class="err-msg zh">请填写公司</span><span class="err-msg en">Please enter your company</span></div>
+    </div>
+    <div class="frow frow-2">
+      <div class="ff"><label class="fl zh">职位 *</label><label class="fl en">Role *</label><input class="fi" id="f-role" type="text" placeholder="CEO / Director / Manager" required><span class="err-msg zh">请填写职位</span><span class="err-msg en">Please enter your role</span></div>
+      <div class="ff"><label class="fl zh">联络电话 *</label><label class="fl en">Phone *</label><input class="fi" id="f-phone" type="tel" placeholder="+60 12-XXX XXXX" required><span class="err-msg zh">请填写电话</span><span class="err-msg en">Please enter your phone number</span></div>
+    </div>
+    <div class="frow frow-2">
+      <div class="ff"><label class="fl">Email *</label><input class="fi" id="f-email" type="email" placeholder="your@company.com" required><span class="err-msg zh">请填写有效电邮</span><span class="err-msg en">Please enter a valid email</span></div>
+      <div class="ff"><label class="fl zh">报名人数 *</label><label class="fl en">Pax *</label><select class="fi fsel" id="f-pax" required><option value="" disabled selected>—</option><option value="1">1</option><option value="2">2</option><option value="3-5">3–5</option><option value="6-9">6–9</option><option value="10+">10+</option></select><span class="err-msg zh">请选择</span><span class="err-msg en">Please select</span></div>
+    </div>
+    <div class="frow frow-1">
+      <div class="ff"><label class="fl zh">你最希望从研学中获得什么？</label><label class="fl en">What do you hope to gain?</label><textarea class="fi fta" id="f-goal" placeholder="e.g. Alibaba org culture, digital transformation ideas…" rows="3"></textarea></div>
+    </div>
+    <div class="frow frow-1" style="border-bottom:none">
+      <div class="ff"><label class="fl zh">你是如何得知这次研学团？</label><label class="fl en">How did you hear about us?</label><select class="fi fsel" id="f-source"><option value="" disabled selected>—</option><option>Friend / Colleague</option><option>Instagram / Facebook</option><option>WhatsApp Group</option><option>Chamber / Organisation</option><option>Other</option></select></div>
+    </div>
+    <div class="pdpa-row">
+      <input type="checkbox" class="pdpa-box" id="pdpa-check" required>
+      <label for="pdpa-check" class="pdpa-txt" style="cursor:default">
+        <span class="zh">我同意 Bino EduTour 根据马来西亚《个人资料保护法令 2010》处理我的个人资料。详情请阅读 <a href="#" onclick="openModal();return false;">隐私政策</a>。</span>
+        <span class="en">I agree to Bino EduTour processing my data under Malaysia's PDPA 2010. See our <a href="#" onclick="openModal();return false;">Privacy Policy</a>.</span>
+      </label>
+    </div>
+    <div class="fsub-row">
+      <p class="f-legal zh">提交后将跳转至转账指示页面。席位将在我们收到 RM 1,000 订金收据后正式锁定。</p>
+      <p class="f-legal en">After submitting, you'll be directed to payment instructions. Seat confirmed once we receive your RM 1,000 deposit receipt.</p>
+      <button type="submit" class="sub-btn"><span class="zh">确认报名 →</span><span class="en">Confirm Registration →</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </form>
+  <div class="processing" id="processing">
+    <div class="processing-icon"></div>
+    <p class="zh">正在处理…</p>
+    <p class="en">Processing…</p>
+  </div>
+  <div id="suc" style="display:none;padding:64px 0;text-align:center">
+    <div class="suc-big zh">已收到 ✓</div>
+    <div class="suc-big en">Received ✓</div>
+    <p class="suc-sub zh" style="margin-top:12px">正在跳转至付款指示页面…</p>
+    <p class="suc-sub en" style="margin-top:12px">Redirecting to payment instructions…</p>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="foot-g">
+    <div>
+      <div class="foot-lr"><img class="foot-logo" src="assets/img_01.jpg" alt="Bino"><span class="foot-name">Bino EduTour · 百诺研学</span></div>
+      <p class="foot-tag">Aspire to Awareness, Alignment, Action.</p>
+      <p class="foot-copy">© 2026 Bino EduTour Sdn Bhd · Malaysia · All Rights Reserved</p>
+    </div>
+    <div class="foot-links">
+      <a href="#" onclick="openModal();return false;">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Refund Policy</a>
+      <a href="https://wa.me/60122468170" target="_blank">WhatsApp Us</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

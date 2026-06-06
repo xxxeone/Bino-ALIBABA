@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bino EduTour · 报名确认 Registration Confirmed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* Restore normal cursor on confirm page — no custom cursor JS here */
+body { cursor: default !important }
+a, button { cursor: pointer !important }
+.lbtn { cursor: pointer !important }
+.copy-btn { cursor: pointer !important }
+.wa-btn { cursor: pointer !important }
+</style>
+</head>
+<body>
+
+<!-- MAST -->
+<header class="mast">
+  <div class="mast-left">
+    <img class="mast-logo" src="assets/img_01.jpg" alt="Bino EduTour">
+    <div class="mast-brand">Bino EduTour<span>百诺研学</span></div>
+  </div>
+  <div class="lang-wrap">
+    <div style="display:flex">
+      <button class="lbtn on" id="btnZH" onclick="setLang('zh')">中文</button>
+      <button class="lbtn" id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="conf-page">
+
+  <!-- STEP BAR -->
+  <div class="steps-bar">
+    <div class="step-item">
+      <div class="step-dot done">✓</div>
+      <span class="step-label done zh">填写资料</span>
+      <span class="step-label done en">Register</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-dot active">2</div>
+      <span class="step-label active zh">付订金</span>
+      <span class="step-label active en">Pay Deposit</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-dot todo">3</div>
+      <span class="step-label todo zh">确认席位</span>
+      <span class="step-label todo en">Confirmed</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="conf-header">
+    <div class="conf-icon-wrap">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B5E20" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <div class="conf-title zh">报名已收到！</div>
+    <div class="conf-title en">Registration Received!</div>
+    <p class="conf-sub zh">请在 <strong>48 小时内</strong>完成订金转账以锁定席位</p>
+    <p class="conf-sub en">Please complete your deposit within <strong>48 hours</strong> to secure your seat</p>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-head-label zh">📋 报名摘要</span>
+      <span class="card-head-label en">📋 Registration Summary</span>
+    </div>
+    <div class="card-body">
+      <div class="card-row">
+        <span class="card-rl zh">行程</span><span class="card-rl en">Trip</span>
+        <span class="card-rv">阿里巴巴研学团 · Sept 11–16, 2026</span>
+      </div>
+      <div class="card-row">
+        <span class="card-rl zh">姓名</span><span class="card-rl en">Name</span>
+        <span class="card-rv" id="sum-name">—</span>
+      </div>
+      <div class="card-row">
+        <span class="card-rl zh">公司</span><span class="card-rl en">Company</span>
+        <span class="card-rv" id="sum-company">—</span>
+      </div>
+      <div class="card-row">
+        <span class="card-rl zh">联络电话</span><span class="card-rl en">Phone</span>
+        <span class="card-rv" id="sum-phone">—</span>
+      </div>
+      <div class="card-row">
+        <span class="card-rl">Email</span>
+        <span class="card-rv" id="sum-email">—</span>
+      </div>
+      <div class="card-row">
+        <span class="card-rl zh">报名人数</span><span class="card-rl en">No. of Pax</span>
+        <span class="card-rv accent" id="sum-pax">—</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT NOTE -->
+  <div class="imp-box">
+    <p class="zh">⚠️ <strong>席位未锁定，直到我们收到你的收据。</strong>转账完成后，请将收据截图发送至我们的 WhatsApp，我们确认后发出正式确认讯息。</p>
+    <p class="en">⚠️ <strong>Your seat is NOT secured until we receive your receipt.</strong> Once transferred, send a screenshot of the receipt to our WhatsApp — we'll confirm your seat upon verification.</p>
+  </div>
+
+  <!-- BANK TRANSFER -->
+  <div class="bank-card">
+    <div class="bank-head">
+      <span class="bank-head-label zh">💳 订金转账资料</span>
+      <span class="bank-head-label en">💳 Deposit Payment Details</span>
+      <span class="bank-head-amt">RM 1,000.00</span>
+    </div>
+    <div class="bank-body">
+      <div class="bank-row">
+        <span class="bank-rl zh">账户名称</span><span class="bank-rl en">Account Name</span>
+        <span class="bank-rv">Bino EduTour Sdn Bhd</span>
+      </div>
+      <div class="bank-row">
+        <span class="bank-rl zh">账户号码</span><span class="bank-rl en">Account No.</span>
+        <span class="bank-rv">
+          00100950892
+          <button class="copy-btn" id="copyAccBtn" onclick="copyAcc('copyAccBtn')">
+            <span class="zh">复制</span><span class="en">Copy</span>
+          </button>
+        </span>
+      </div>
+      <div class="bank-row">
+        <span class="bank-rl zh">银行</span><span class="bank-rl en">Bank</span>
+        <span class="bank-rv">Hong Leong Bank</span>
+      </div>
+      <div class="bank-row">
+        <span class="bank-rl zh">转账金额</span><span class="bank-rl en">Amount</span>
+        <span class="bank-rv accent">
+          RM 1,000.00
+          <button class="copy-btn" id="copyAmtBtn" onclick="copyAmt('copyAmtBtn')">
+            <span class="zh">复制</span><span class="en">Copy</span>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="bank-note zh">
+      <strong>转账备注：</strong>请填上你的<strong>姓名 + 阿里研学团</strong>，方便我们核对。<br>
+      例如：<em>Jesson Lim ALI002</em>
+    </div>
+    <div class="bank-note en">
+      <strong>Transfer reference:</strong> Include your <strong>name + Alibaba Study Tour</strong> in the transfer remarks.<br>
+      e.g. <em>Jesson Lim ALI002</em>
+    </div>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="steps-card">
+    <div class="card-head">
+      <span class="card-head-label zh">🗺️ 接下来怎么做？</span>
+      <span class="card-head-label en">🗺️ What's Next?</span>
+    </div>
+    <div class="step-row">
+      <div class="step-n">1</div>
+      <div class="step-text">
+        <div class="step-title zh">完成 RM 1,000 订金转账</div>
+        <div class="step-title en">Transfer RM 1,000 deposit</div>
+        <div class="step-desc zh">使用上方银行资料进行网银或 ATM 转账</div>
+        <div class="step-desc en">Use the bank details above to transfer via online banking or ATM</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-n">2</div>
+      <div class="step-text">
+        <div class="step-title zh">WhatsApp 发送收据截图</div>
+        <div class="step-title en">Send receipt via WhatsApp</div>
+        <div class="step-desc zh">将收据截图发送到客服号码 +60 12-246 8170</div>
+        <div class="step-desc en">Send your payment screenshot to +60 12-246 8170</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-n">3</div>
+      <div class="step-text">
+        <div class="step-title zh">等待我们确认</div>
+        <div class="step-title en">Await confirmation</div>
+        <div class="step-desc zh">我们将在 24 小时内通过 WhatsApp 发送正式确认讯息，席位即锁定 ✅</div>
+        <div class="step-desc en">We'll send official WhatsApp confirmation within 24 hours — seat secured ✅</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP CTA -->
+  <a href="https://wa.me/60122468170" id="waBtn" class="wa-btn" target="_blank">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.105.549 4.09 1.504 5.82L.057 23.5l5.846-1.424A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.67-.488-5.21-1.341l-.374-.222-3.468.844.876-3.358-.243-.388A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    <span class="zh">发送收据给我们 →</span>
+    <span class="en">Send Receipt to Us →</span>
+  </a>
+
+</div>
+
+<footer class="conf-foot">
+  <p><span>Bino EduTour · 百诺研学</span> · © 2026 Bino EduTour Sdn Bhd · All Rights Reserved</p>
+</footer>
+
+<script src="js/confirm.js"></script>
+</body>
+</html>
